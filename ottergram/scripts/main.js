@@ -13,11 +13,11 @@ function setDetails(image, titleText) {
   "use strict";
 
   var detailImage =
-  document.querySelector(DETAIL_IMAGE_SELECTOR);
+    document.querySelector(DETAIL_IMAGE_SELECTOR);
   detailImage.setAttribute("src", image);
 
   var detailTitle =
-  document.querySelector(DETAIL_TITLE_SELECTOR);
+    document.querySelector(DETAIL_TITLE_SELECTOR);
   detailTitle.textContent = titleText;
 }
 
@@ -26,14 +26,14 @@ function showDetails() {
   var frame = document.querySelector(DETAIL_FRAME_SELECTOR);
   document.body.classList.remove(HIDDEN_DETAIL_CLASS);
   frame.classList.add(TINY_EFFECT_CLASS);
-  setTimeout(function () {
+  setTimeout(function() {
     frame.classList.remove(TINY_EFFECT_CLASS);
   }, 50);
 }
 
 function addKeyPressHandler() {
   'use strict';
-  document.body.addEventListener('keyup', function (event) {
+  document.body.addEventListener('keyup', function(event) {
     event.preventDefault();
     console.log(event.keyCode);
     if (event.keyCode === ESC_KEY) {
@@ -44,7 +44,7 @@ function addKeyPressHandler() {
 
 function addButtonClickHandler(button) {
   "use strict";
-  button.addEventListener("click", function () {
+  button.addEventListener("click", function() {
     if (button == PREV_BUTTON) {
       prev();
     } else {
@@ -100,12 +100,12 @@ function titleFromThumb(thumb) {
 function setDetailsFromThumb(thumb) {
   "use strict";
   setDetails(imageFromThumb(thumb),
-  titleFromThumb(thumb));
+    titleFromThumb(thumb));
 }
 
 function addThumbClickHandler(thumb) {
   "use strict";
-  thumb.addEventListener("click", function (event) {
+  thumb.addEventListener("click", function(event) {
     event.preventDefault();
     setDetailsFromThumb(thumb);
     showDetails();
