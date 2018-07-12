@@ -3,7 +3,7 @@ var DETAIL_IMAGE_SELECTOR = "[data-image-role=\"target\"]",
   THUMBNAIL_LINK_SELECTOR = "[data-image-role=\"trigger\"]",
   PREV_BUTTON = "[data-previous-button=\"trigger\"]",
   NEXT_BUTTON = "[data-next-button=\"trigger\"]",
-  curr_button_ind = 0;
+  curr_index = 0;
 var ESC_KEY = 27;
 var HIDDEN_DETAIL_CLASS = 'hidden-detail';
 var DETAIL_FRAME_SELECTOR = '[data-image-role="frame"]';
@@ -63,11 +63,11 @@ function prev() {
   var thumbArr = getThumbsArray();
   var thumbNum = thumbArr.length;
 
-  if (--curr_button_ind < 0) {
-    curr_button_ind = thumbNum - 1;
+  if (--curr_index < 0) {
+    curr_index = thumbNum - 1;
   }
 
-  setDetailsFromThumb(thumbArr[curr_button_ind]);
+  setDetailsFromThumb(thumbArr[curr_index]);
 }
 
 function next() {
@@ -75,9 +75,9 @@ function next() {
   var thumbArr = getThumbsArray();
   var thumbNum = thumbArr.length;
 
-  curr_button_ind = ++curr_button_ind % thumbNum;
+  curr_index = ++curr_index % thumbNum;
 
-  setDetailsFromThumb(thumbArr[curr_button_ind]);
+  setDetailsFromThumb(thumbArr[curr_index]);
 }
 
 function getThumbsArray() {

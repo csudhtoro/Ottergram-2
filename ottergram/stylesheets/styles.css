@@ -165,10 +165,12 @@ a:hover {
 
 .previous {
   color: black;
+  font-size: 15px;
   position: relative;
 }
 
 .next {
   color: black;
+  font-size: 15px;
   position: relative;
 }
